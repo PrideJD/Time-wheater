@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/wheater')
 def get_weather():
-    params = {"access_key": "7232fd01ee4fdc36a40fb942687c8dcc", "query": "Moscow"}
+    params = {"access_key": "YOUR_KEY_FROM_WEATHERSTACK", "query": "Moscow"}
     api_result = requests.get('http://api.weatherstack.com/current', params)
     api_response = api_result.json()
     return f"Сейчас в Москве {api_response['current']['temperature']} градусов"
